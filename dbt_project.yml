@@ -1,0 +1,41 @@
+name: 'dbt_repo'
+version: '1.0.0'
+config-version: 2
+
+profile: 'default'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+
+  dbt_repo:
+
+    STG:
+      +database: PROD_DB
+      +schema: STG
+      +materialized: view
+
+    CURATED:
+      +database: PROD_DB
+      +schema: CURATED
+      +materialized: table
+
+    CONSUMPTION:
+      +database: PROD_DB
+      +schema: CONSUMPTION
+      +materialized: view
+
+    # AUDIT:
+    #   +database: PROD_DB
+    #   +schema: AUDIT
