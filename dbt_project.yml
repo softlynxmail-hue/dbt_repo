@@ -36,6 +36,7 @@ models:
       +schema: CONSUMPTION
       +materialized: view
 
-    # AUDIT:
-    #   +database: PROD_DB
-    #   +schema: AUDIT
+    AUDIT:
+      +database: PROD_DB
+      +schema: AUDIT
+      +materialized: table

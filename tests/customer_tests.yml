@@ -21,6 +21,8 @@ models:
                 - USA
                 - INDIA
                 - GERMANY
+                - SPAIN
+                - UAE
 
           - not_null:
               severity: warn
