@@ -15,8 +15,12 @@ models:
       - name: country
 
         tests:
+
           - accepted_values:
               values:
                 - USA
                 - INDIA
                 - GERMANY
+
+          - not_null:
+              severity: warn
