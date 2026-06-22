@@ -4,24 +4,8 @@
 
 SELECT
 
-    CUSTOMER_ID,
+*,
 
-    FIRST_NAME,
+{{ audit_columns() }}
 
-    LAST_NAME,
-
-    COMPANY,
-
-    CITY,
-
-    COUNTRY,
-
-    EMAIL,
-
-    PHONE,
-
-    SUBSCRIPTION_DATE,
-
-    CURRENT_TIMESTAMP() AS LOAD_TS
-
-FROM {{ ref('stg_customer') }}
+FROM {{ ref('customer_ephemeral') }}

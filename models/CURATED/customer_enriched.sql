@@ -6,9 +6,9 @@ SELECT
 
     customer.*,
 
-    lookup.region
+    country_lookup.region
 
 FROM {{ ref('customer') }} AS customer
 
-LEFT JOIN {{ ref('country_lookup') }} AS lookup
-    ON customer.country = lookup.country
+LEFT JOIN {{ ref('country_lookup') }} AS country_lookup
+    ON customer.country = country_lookup.country

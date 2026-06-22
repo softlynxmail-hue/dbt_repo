@@ -1,5 +1,5 @@
 {{ config(
-    materialized='ephemeral'
+    materialized='view'
 ) }}
 
 SELECT
@@ -16,10 +16,10 @@ SELECT
 
     country,
 
-    phone,
+    REPLACE(phone,'-','') AS phone,
 
     email,
 
     subscription_date
 
-FROM {{ ref('stg_customer_phone_clean') }}
+FROM {{ ref('stg_customer') }}

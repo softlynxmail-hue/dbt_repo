@@ -1,6 +1,6 @@
 SELECT
 
-    email
+email
 
 FROM {{ ref('customer') }}
 

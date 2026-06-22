@@ -4,6 +4,7 @@
 ) }}
 
 SELECT *
+
 FROM {{ ref('customer') }}
 
 {% if is_incremental() %}

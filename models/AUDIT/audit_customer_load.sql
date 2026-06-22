@@ -1,9 +1,11 @@
-{{ config(materialized='incremental') }}
+{{ config(
+    materialized='incremental'
+) }}
 
 SELECT
 
-CURRENT_TIMESTAMP() AS load_time,
+    CURRENT_TIMESTAMP() AS load_time,
 
-COUNT(*) AS record_count
+    COUNT(*) AS total_records
 
 FROM {{ ref('customer') }}

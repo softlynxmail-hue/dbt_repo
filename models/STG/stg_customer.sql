@@ -1,25 +1,16 @@
-{{ config(
-    materialized='view'
-) }}
-
 SELECT
 
-    customer_id,
+customer_id,
 
-    first_name,
+{{ standardize_name('first_name') }} AS first_name,
 
-    last_name,
+{{ standardize_name('last_name') }} AS last_name,
 
-    company,
+company,
+city,
+country,
+phone,
+email,
+subscription_date
 
-    city,
-
-    country,
-
-    phone,
-
-    email,
-
-    subscription_date
-
-FROM {{ source('RAW', 'CUSTOMER_RAW') }}
+FROM {{ source('RAW','CUSTOMER_RAW') }}
