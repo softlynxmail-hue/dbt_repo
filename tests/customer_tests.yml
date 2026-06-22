@@ -6,13 +6,17 @@ models:
 
     columns:
 
-      - name: CUSTOMER_ID
+      - name: customer_id
 
         tests:
           - unique
           - not_null
 
-      - name: EMAIL
+      - name: country
 
         tests:
-          - not_null
+          - accepted_values:
+              values:
+                - USA
+                - INDIA
+                - GERMANY
