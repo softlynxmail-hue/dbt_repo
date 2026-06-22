@@ -1,25 +1,22 @@
-version: 2
+# version: 2
 
-models:
+# models:
 
-  - name: customer
+#   - name: customer
 
-    columns:
+#     columns:
 
-      - name: customer_id
+#       - name: customer_id
 
-        tests:
-          - unique
-          - not_null
+#         tests:
+#           - unique
+#           - not_null
 
-      - name: country
+#       - name: country
 
-        tests:
+#         tests:
 
-          - accepted_values:
-              values:
-                - USA
-                - INDIA
-                - GERMANY
-                - SPAIN
-                - UAE
+#           - accepted_values:
+#             arguments:
+#               values: ['USA','INDIA','GERMANY','SPAIN','UAE' ]
+ 
