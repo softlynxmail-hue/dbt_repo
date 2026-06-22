@@ -1,22 +1,45 @@
-# version: 2
+version: 2
 
-# models:
+models:
 
-#   - name: customer
+  - name: customer
 
-#     columns:
+    columns:
 
-#       - name: customer_id
+      - name: customer_id
 
-#         tests:
-#           - unique
-#           - not_null
+        tests:
 
-#       - name: country
+          - unique:
+              config:
+                severity: error
 
-#         tests:
+          - not_null:
+              config:
+                severity: error
 
-#           - accepted_values:
-#             arguments:
-#               values: ['USA','INDIA','GERMANY','SPAIN','UAE' ]
- 
+      - name: country
+
+        tests:
+
+          - not_null:
+              config:
+                severity: warn
+
+          - accepted_values:
+              arguments:
+                values:
+                  - USA
+                  - INDIA
+                  - GERMANY
+                  - SPAIN
+                  - UAE
+              config:
+                severity: warn
+
+          - relationships:
+              arguments:
+                to: ref('country_lookup')
+                field: country
+              config:
+                severity: error
