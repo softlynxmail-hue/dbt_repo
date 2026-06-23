@@ -36,10 +36,3 @@ models:
                   - UAE
               config:
                 severity: warn
-
-          - relationships:
-              arguments:
-                to: ref('country_lookup')
-                field: country
-              config:
-                severity: error

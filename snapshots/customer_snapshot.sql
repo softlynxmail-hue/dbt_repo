@@ -5,8 +5,13 @@
       target_database='PROD_DB',
       target_schema='AUDIT',
       unique_key='CUSTOMER_ID',
-      strategy='timestamp',
-      updated_at='LOAD_TS'
+      strategy='check',
+      check_cols=[
+        'FIRST_NAME',
+        'LAST_NAME',
+        'EMAIL',
+        'COUNTRY'
+      ]
     )
 }}
 

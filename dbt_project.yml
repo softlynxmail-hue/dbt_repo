@@ -22,21 +22,21 @@ models:
   dbt_repo:
 
     STG:
-      +database: PROD_DB
+      +database: STG_DB
       +schema: STG
       +materialized: view
 
     CURATED:
-      +database: PROD_DB
+      +database: STG_DB
       +schema: CURATED
       +materialized: table
 
     CONSUMPTION:
-      +database: PROD_DB
+      +database: STG_DB
       +schema: CONSUMPTION
       +materialized: view
 
     AUDIT:
-      +database: PROD_DB
+      +database: STG_DB
       +schema: AUDIT
       +materialized: table
