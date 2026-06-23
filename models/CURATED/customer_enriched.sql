@@ -1,5 +1,6 @@
 {{ config(
-    materialized='table'
+    materialized='table',
+    transient=false
 ) }}
 
 SELECT
