@@ -10,7 +10,8 @@
         'FIRST_NAME',
         'LAST_NAME',
         'EMAIL',
-        'COUNTRY'
+        'COUNTRY',
+        'PHONE'
       ]
     )
 }}
